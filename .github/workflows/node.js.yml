@@ -28,6 +28,6 @@ jobs:
         cache: 'npm'
         cache-dependency-path: ./citizen-engagement
     - run: |
-       npm insatll
+       npm install
        npm install @angular/cli
        ng build --prod --output-path=dist
