@@ -27,9 +27,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache-dependency-path: ./package-lock.json
     - name: build
-       cd ./citizen-engagement/src
+    - run: |
+         cd cd ./citizen-engagement/src
+         ng build
     - run: npm install
-    - run: ng build
-       cd ./dist
-    - run: ng test
-    - run: ng serve
