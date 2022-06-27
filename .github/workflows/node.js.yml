@@ -26,6 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: ./citizen-engagement
     - run: |
        npm insatll
        npm install @angular/cli
