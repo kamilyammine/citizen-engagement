@@ -30,5 +30,6 @@ jobs:
        cd ./citizen-engagement/src
     - run: npm install
     - run: ng build
+       cd ./dist
     - run: ng test
     - run: ng serve
