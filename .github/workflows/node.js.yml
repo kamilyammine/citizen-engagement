@@ -28,6 +28,6 @@ jobs:
         cache-dependency-path: ./package-lock.json
     - name: build
     - run: |
-         cd cd ./citizen-engagement/src
+         cd ./citizen-engagement/src
          ng build
     - run: npm install
