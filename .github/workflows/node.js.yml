@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: kamil_runner1
+    runs-on: kamil_runner2
 
     strategy:
       matrix:
