@@ -1,0 +1,32 @@
+<div class="wrapping_square input_styling" [ngClass]="{
+      invalid: fieldInvalid(),
+      multiselect_wrapper: multiple && ngControl.control.value
+    }">
+  <mat-form-field color="primary">
+    <mat-label>{{ placeholdertext | translate }}{{ fieldRequired() ? "*" : "" }}
+    </mat-label>
+
+    <mat-select [multiple]="multiple" [formControl]="ngControl.control" [panelClass]="{panelMultiple : multiple}">
+      <mat-form-field class="dropdown_search_field" *ngIf="multiple">
+        <input matInput color="primary" type="text" placeholder="{{
+              'generic.filter.search' | translate
+            }}" [(ngModel)]="searchValue" />
+        <mat-icon class="search_input_icon" *ngIf="searchValue" (click)="resetSearchValue()">clear
+        </mat-icon>
+      </mat-form-field>
+      <div *ngIf="multiple">
+        <div class="clear_selection select_actions" (click)="selectAllClicked(false)">
+          {{ "generic.filter.clear_selection" | translate }}
+        </div>
+        <div class="select_all select_actions" (click)="selectAllClicked(true)">
+          {{ "generic.filter.select_all" | translate }}
+        </div>
+        <hr />
+      </div>
+      <mat-option *ngFor="let option of dropDownOptions" [value]="value ? option[value] : option">
+        {{ label ? option[label] : option }}</mat-option>
+    </mat-select>
+    <!-- <mat-icon class="clear_icon pointer" *ngIf="!ngControl.control.pristine" (click)="selectAllClicked(false)">clear</mat-icon> -->
+  </mat-form-field>
+</div>
+<app-error-display [control]="ngControl.control"> </app-error-display>

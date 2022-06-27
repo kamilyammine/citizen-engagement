@@ -1,0 +1,73 @@
+<div class="popup" [ngClass]="type">
+    <div *ngIf="!close" [dir]='lang === "ar" ? "rtl" : "ltr"' class="dialog_wrapper">
+        <form [formGroup]="form" (ngSubmit)="buttonClicked(true)">
+            <div class="dialog_header bkgrd_color">
+                <div class="dialog_header_content">
+                    <div class="subtitle">
+                        <p [ngClass]="{'arabic_dir': lang === 'ar', 'english_dir': lang === 'en'}">
+                            {{'feedback_details.title'| translate}}</p>
+                    </div>
+                </div>
+                <mat-icon class="pointer" aria-hidden="false" aria-label="Example home icon"
+                    (click)="closeDialog(true)">
+                    close</mat-icon>
+            </div>
+            <div class="form_wrapper padding">
+                <div class="form_container">
+
+                    <p [ngClass]="{'arabic_dir': lang === 'ar', 'english_dir': lang === 'en'}">
+                        {{'feedback_details.message'| translate}}</p>
+
+                    <!-- Phone -->
+                    <app-text-input formControlName='phone' placeholdertext="feedback_details.phone"
+                        [ngClass]="{'highlihted_field': form.invalid }"></app-text-input>
+                    <!-- Email -->
+                    <app-text-input formControlName='email' placeholdertext="feedback_details.email"
+                        [ngClass]="{'highlihted_field': form.invalid }"></app-text-input>
+                    <!-- Gender Dropdown -->
+                    <app-dropdown-input [dropDownOptions]="lookups?.genderOptions" formControlName="gender"
+                        placeholdertext="feedback_details.gender" value="value" label="label">
+                    </app-dropdown-input>
+                    <!-- Age Dropdown -->
+                    <app-dropdown-input [dropDownOptions]="lookups?.ageOptions" formControlName="ageRange"
+                        placeholdertext="feedback_details.ageRange" value="value" label="label">
+                    </app-dropdown-input>
+                    <!-- User Type Dropdown -->
+                    <app-dropdown-input [dropDownOptions]="lookups?.userOptions" formControlName="userType"
+                        placeholdertext="feedback_details.userType" value="value" label="label">
+                    </app-dropdown-input>
+                    <!-- Other User Type Text Input -->
+                    <app-text-input formControlName='other' placeholdertext="feedback_details.other" *ngIf="isOther">
+                    </app-text-input>
+                    <!-- First Name -->
+                    <app-text-input formControlName='firstName' placeholdertext="feedback_details.firstName">
+                    </app-text-input>
+                    <!-- Last Name -->
+                    <app-text-input formControlName='lastName' placeholdertext="feedback_details.lastName">
+                    </app-text-input>
+                    <!-- Address -->
+                    <app-text-input formControlName='address' placeholdertext="feedback_details.address">
+                    </app-text-input>
+                    <div class="btn_wrapper">
+                        <button type="button" class="btn cancel" (click)="closeDialog(true)">
+                            {{'cancel' | translate}}
+                        </button>
+                        <button class="btn bkgrd_color" [disabled]="form.invalid"
+                            [ngClass]="{'submit_btn_disabled': form.invalid }">
+                            {{'submit' | translate}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div *ngIf="close" class="padding">
+        <p class="center">{{'cancel_message' | translate}}</p>
+        <div class="btn_wrapper">
+            <button class="btn cancel" (click)="closeDialog(false)">{{'no' | translate}}</button>
+            <button mat-button class="btn bkgrd_color" (click)="buttonClicked(false)">
+                {{'yes' | translate}}</button>
+        </div>
+    </div>
+</div>

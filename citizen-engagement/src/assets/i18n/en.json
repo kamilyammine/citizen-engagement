@@ -1,0 +1,108 @@
+{
+    "form_errors": {
+        "field_required": "This field is required",
+        "field_required_true": "Please confirm",
+        "incorrect_format": "Incorrect Format",
+        "password": "Password should be longer than 6 characters and contanins numbers and letters",
+        "password_matching": "Passwords do not match",
+        "old_password_error": "Old password is incorrect",
+        "phone_number_formatting": "Phone number should contain 8 digits",
+        "hotline_formatting": "Hotline number should have between 3 and 8 digits",
+        "number_formatting": "This field should contain a number",
+        "max_length_formatting1": "يجب أن يكون",
+        "max_length_formatting2": "او اقل",
+        "min_length_formatting1": "يجب أن يكون",
+        "min_length_formatting2": "او اكثر",
+        "min_max_length_formatting1": "يجب أن يكون بين",
+        "min_max_length_formatting2": "و"
+    },
+    "Hello": "Hello",
+    "search": "Search",
+    "close":"Close",
+    "thank_you": "Thank you for submitting your feedback",
+    "thank_you_2": "Concerned persons can inquire about additional information and/or submit a complaint (if any) by contacting the Grievance Redress Mechanism (GRM) Unit from Monday to Friday between 9:00AM and 3:00PM, by:",
+    "thank_you_3" : "Phone: 01980096 ext:317",
+    "thank_you_4" : "Email: GRM.REP@cdr.gov.lb",
+    "thank_you_5" : "Register an official letter at the CDR (Address: Tallet al Serail - Riad el Solh, Beirut – Lebanon)",
+    "on_your_way": "عطريقك",
+    "project_title": "Roads & Employment Project",
+    "project_description": "The Roads and Employment Project (REP) aims to improve transport connectivity and road safety along selected portions of the country’s classified roads and to stimulate the economy by creating jobs. The REP is funded by the World Bank through a US$200 million loan from the International Bank for Reconstruction and Development, including a US$45 million grant from the Global Concessional Financing Facility. The REP is implemented by the Council for Development and Reconstruction on behalf of the Lebanese Government for the benefit of the Ministry of Public Works and Transport.",
+    "home_title": "What is your opinion about the implementation of the project in your area?",
+    "environment_feedback": "Environmental Aspect",
+    "society_feedback": "Social Aspect",
+    "traffic_feedback": "Traffic & Accessibility Aspect",
+    "health_feedback" : "Public Health & Safety Aspect",
+    "other_feedback" : "Other Aspect",
+    "submit": "Submit",
+    "additional_information": "Additional Information",
+    "cancel_message": "Are you sure you want to cancel without sending your feedback?",
+    "yes": "Yes",
+    "no": "No",
+    "feedback_anonymous" : "Your feedback will be anonymous.",
+    "privacy_policy": "Privacy Policy",
+    "terms_of_use": "Terms of Use",
+    "cancel": "Cancel",
+    "contact_us": "Contact Us",
+    "contact_us_message": "If you have any comments or concerns, please send an email to : info@impact.gov.lb",
+    "max_2000_chars" : "Maximum 2000 characters",
+    "unexpected_error" : "Your feedback could not be submitted at this time. Please try again later.",
+    "photo_not_geotagged" : "You should either be on the site about which you are filing a complaint, or the uploaded photo needs to be taken on that site while having your device location services enabled. The photo you are uploading does not have geotagging.",
+    "photo_not_in_proximity" : "You should either be on the site about which you are filing a complaint, or the uploaded photo needs to be taken on that site. The photo you are uploading was not taken on any CDR construction site.",
+    "feedback_details": {
+        "society_title": "Reporting a project on the social level",
+        "health_title": "Reporting a project at the level of public health and safety",
+        "traffic_title": "Reporting a project on the level of traffic and accessibility",
+        "environment_title": "Reporting a project on the environmental level",
+        "title": "User Information",
+        "message": "Please enter the phone number or email address at least",
+        "message_old": "The following fields are not mandatory except for either the phone number or email address",
+        "other_title": "Other (please specify)",
+        "save": "Save",
+        "kadaa": "Project Caza",
+        "project": "Project",
+        "gender": "Gender",
+        "ageRange": "Age Group",
+        "userType":"I am a ",
+        "other": "Please Specify",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "address": "Address",
+        "email": "Email",
+        "phone" : "Phone",
+        "options": {
+            "additional_options": {
+                "title": "Your Feedback",
+                "image_video": "Picture or Video",
+                "image": "Picture",
+                "text": "Message"
+            },
+            "environment": {
+                "other": "Other",
+                "noise": "ضجيج",
+                "smell": "رائحة",
+                "solid_waste": "نفايات صلبة",
+                "liquid_waste": "نفايات سائلة"
+            },
+            "society": {
+                "labor_influx": "تدفق للعمال",
+                "behavior": "وجود سلوكيات",
+                "child_labor": "تشغيل الاطفال",
+                "tensions": "توترات إجتماعية",
+                "road_blockage": "قطع طريق"
+            },
+            "traffic": {
+                "mobility": "زيادة وقت التنقل",
+                "road_blockage": "قطع طريق",
+                "traffic_jam": "إزدحام سير",
+                "traffic_problem": "مشكلة مرور"
+            },
+
+            "health": {
+                "noise": "ضجيج",
+                "traffic_signs": "عدم وجود لللافتات المرورية",
+                "covid": "عدم الوقاية من فيروس كورونا",
+                "protective": "عدم وجود معدات حماية"
+            }
+        }
+    }
+}

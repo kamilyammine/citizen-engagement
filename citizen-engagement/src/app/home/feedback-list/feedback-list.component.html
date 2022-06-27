@@ -1,0 +1,64 @@
+<div class="body_background">
+<app-header></app-header>
+
+    <div class="home_wrapper">
+        <div class="project_wrapper" >
+            <!-- <img class="pin" src="assets/images/pin.svg" alt="" />
+            <mat-form-field [ngClass]="isEnglish? 'project_en' : 'project_ar'" >
+                <mat-select [(value)]="selectedProjectId" (selectionChange)="selectProject($event.value)">
+                  <mat-option [value]="option.id" *ngFor="let option of projects">{{ option.name }}</mat-option>
+                </mat-select>
+              </mat-form-field> -->
+              <div>
+                  <p class="project_title">{{'project_title' | translate}}</p>
+                  <p class="project_description">{{'project_description' | translate}}</p>
+              </div>
+        </div>
+        <p class="home_title">{{'home_title' | translate}}</p>
+        <p class="feedback_anonymous">{{'feedback_anonymous' | translate}}</p>
+        <div class="feedback_wrapper">
+            <div class="feedback_card society">
+                <div class="feedback_card_inner" (click)="navigate('society')">
+                    <div class="icon_wrapper">
+                        <img src="assets/images/society-options/society.svg" alt="" />
+                    </div>
+                    <p class="inner_text wd-70">{{'society_feedback' | translate}}</p>
+                </div>
+            </div>
+            <div class="feedback_card environment" (click)="navigate('environment')">
+                <div class="feedback_card_inner">
+                    <div class="icon_wrapper">
+                        <img src="assets/images/environment-options/environment.svg" alt="" />
+                    </div>
+                    <p class="inner_text">{{'environment_feedback' | translate}}</p>
+                </div>
+            </div>
+            <div class="feedback_card traffic" (click)="navigate('traffic')">
+                <div class="feedback_card_inner">
+                    <div class="icon_wrapper">
+                        <img src="assets/images/traffic-options/traffic.svg" alt="" />
+                    </div>
+                    <p class="inner_text">{{'traffic_feedback' | translate}}</p>
+                </div>
+            </div>
+            <div class="feedback_card health" (click)="navigate('health')">
+                <div class="feedback_card_inner">
+                    <div class="icon_wrapper">
+                        <img src="assets/images/health-options/health.svg" alt="" />
+                    </div>
+                    <p class="inner_text">{{'health_feedback' | translate}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="other_feedback">
+            <div class="other_feedback_card" (click)="navigate('other')">
+                <p>{{'other_feedback' | translate}}</p>
+            </div>
+        </div>
+        <p class="contact_us" (click)="openContactUs()">{{'contact_us' | translate }}</p>
+        <div class="links">
+            <a (click)="openLegalTerms('privacy_policy')"> {{'privacy_policy' | translate }}</a> -
+            <a (click)="openLegalTerms('terms_of_use')">{{'terms_of_use' | translate }}</a>
+        </div>
+    </div>
+</div>

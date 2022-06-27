@@ -1,0 +1,53 @@
+
+@import 'src/assets/global-styles/abstracts/colors'
+::ng-deep
+    .mat-select-value
+        padding: 0 15px
+    .mat-select-arrow
+        margin: 0 10px !important
+.clear_selection
+    margin-left: 10px
+    display: inline
+    float: left
+
+.select_all
+    display: inline
+    margin-right: 10px
+    float: right
+
+hr
+    clear: both
+
+.select_actions
+    color: $feedback_blue
+    font-size: 9pt
+    cursor: pointer
+    &:hover
+        text-decoration: underline
+
+.search_input_icon
+    font-size: 15px
+    color: $feedback_blue
+    cursor: pointer
+
+.clear_icon
+    margin-top: 20px
+    color: $feedback_blue
+    cursor: pointer
+    font-size: 20px
+    margin-left: 5px
+
+// .multiselect_wrapper
+//     display: flex
+//     flex-direction: row-reverse
+//     ::ng-deep
+//         .mat-form-field-infix
+//             width: 100% !important
+//             .mat-select-value
+//                 height: 25px
+//             .mat-select-arrow-wrapper
+//                 vertical-align: baseline
+
+@media only screen and (max-width: 550px)
+    ::ng-deep .cdk-overlay-container .cdk-overlay-pane .panelMultiple
+        min-width: calc(100% + 9vw) !important

@@ -1,0 +1,99 @@
+<app-header></app-header>
+<div class="feedback_details_wrapper" [ngClass]="{'arabic_dir': lang === 'ar', 'english_dir': lang === 'en'}">
+    <!-- Page title with Icon -->
+    <div class="feedback_title" [ngClass]="feedbackConfig?.type">
+        <img [src]="feedbackConfig?.icon" alt="" *ngIf="feedbackConfig?.type !== 'other'"/>
+        <p>{{feedbackConfig?.title | translate}}</p>
+    </div>
+    <div class="feedback_body" [ngClass]="feedbackConfig?.type === 'other' ? 'push_up' : null">
+        <form [formGroup]="form" (ngSubmit)="openDemographics()">
+            <!-- Feedback Options Start -->
+            <div class="feedback_options_wrapper" *ngIf="feedbackConfig?.type !== 'other'">
+                <div class="feedback_options_list"
+                    [ngClass]="currentOptions?.length == 5? 'five_options': 'three_options'">
+                    <div class="feedback_option" *ngFor="let option of currentOptions; let i = index"
+                        [ngClass]="[feedbackConfig?.type, option.selected? option.selectedClass : '']"
+                        (click)="selectOption(i)">
+                        <img [src]="option.icon" alt="" (error)="setDefaultPic(i)" *ngIf="option.icon">
+                        <p [ngClass]="feedbackConfig?.type">{{ lang === 'ar' ? option.title : option.title_en}}</p>
+                    </div>
+                </div>
+                <div class="feedback_description" *ngIf="description_ar || description_en ">
+                    {{lang === 'ar' ? description_ar : description_en}}
+                </div>
+            </div>
+            <!-- Feedback Options End -->
+            <!--  -->
+            <!-- Feedback Form Fields Start -->
+            <div class="feedback_options_wrapper mt-4" *ngIf="isSelectedOption">
+                <div class="additional_options">
+                    <!-- Card Title -->
+                    <div [ngClass]="lang === 'ar' ? 'card_ribbon_ar' : 'card_ribbon_en'">
+                        <p class="more_title">{{'feedback_details.options.additional_options.title' | translate}}</p>
+                    </div>
+                    <!--  -->
+                    <!-- Kadaa Dropdown -->
+                    <div class="wrapping_square input_styling with_margin_top">
+                        <mat-form-field [ngClass]="lang === 'ar'? 'project_ar' : 'project_en'"
+                            class="dropdown_input_field">
+                            <mat-label>{{'feedback_details.kadaa' | translate}} *</mat-label>
+                            <mat-select [(value)]="selectedKadaaKey" (selectionChange)="selectKadaa($event.value)">
+                                <mat-option></mat-option>
+                                <mat-option [value]="kadaa.key" *ngFor="let kadaa of kadaas">{{ lang === 'ar' ?
+                                    kadaa.nameArLb : kadaa.nameEnUs}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <!-- Project Dropdown -->
+                    <div class="wrapping_square input_styling" *ngIf="selectedKadaaKey && filteredProjects.length > 0">
+                        <mat-form-field [ngClass]="lang === 'ar'? 'project_ar' : 'project_en'"
+                            class="dropdown_input_field">
+                            <mat-label>{{'feedback_details.project' | translate}} *</mat-label>
+                            <mat-select formControlName="project">
+                                <mat-form-field class="dropdown_search_field">
+                                    <input (keydown)="handleInput($event)" matInput color="primary" type="text"
+                                        autocomplete="off" placeholder="{{'search' | translate}}"
+                                        [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}" />
+                                </mat-form-field>
+                                <mat-option [value]="project.id"
+                                    *ngFor="let project of filteredProjects | filterPipe:(lang == 'ar' ? 'descriptionArLb' : 'descriptionEnUs'):searchValue">
+                                    {{ lang ===
+                                    'ar' ? project.descriptionArLb : project.descriptionEnUs}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <!-- (lang == 'ar' ? 'descriptionArLb' : 'descriptionEnUs') -->
+                    <!-- <div class="wrapping_square input_styling" *ngIf="selectedKadaaKey && filteredProjects.length > 0">
+                        <mat-form-field [ngClass]="lang === 'ar'? 'project_ar' : 'project_en'"
+                            class="dropdown_input_field">
+                            <mat-label>{{'feedback_details.project' | translate}}*</mat-label>
+                            <input type="text" matInput formControlName="project" [matAutocomplete]="auto">
+                            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayProjectName">
+                                <mat-option *ngFor="let project of autocompleteProjects | async" [value]="project">
+                                    {{lang === 'ar' ? project.descriptionArLb : project.descriptionEnUs}}
+                                </mat-option>
+                            </mat-autocomplete>
+                        </mat-form-field>
+                    </div> -->
+                    <!-- <button type="button" (click)="openImageDialog()">open image dialog</button> -->
+                    <!-- Comment Form Field -->
+                    <app-textarea-input formControlName="comment"
+                        placeholdertext="feedback_details.options.additional_options.text">
+                    </app-textarea-input>
+                    <!-- Image Form Field Start -->
+                    <app-upload-image #uploadImage [lang]="lang" [imageRequired]="imageRequired" (fileSelected)="addFile($event)"></app-upload-image>
+                    <!-- Image Form Field End -->
+                </div>
+
+            </div>
+            <!-- Feedback Form Fields End -->
+            <app-submit-button [form]="form" style="text-align: center; padding-bottom: 20px;"
+                [typeOfFeedback]="feedbackConfig?.type" [condition]="selectedImages != null && selectedImages.length > 0" *ngIf="imageRequired">
+            </app-submit-button>
+            <app-submit-button [form]="form" style="text-align: center; padding-bottom: 20px;"
+                [typeOfFeedback]="feedbackConfig?.type" *ngIf="!imageRequired">
+            </app-submit-button>
+        </form>
+    </div>
+
+</div>

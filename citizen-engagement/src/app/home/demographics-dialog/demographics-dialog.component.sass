@@ -1,0 +1,59 @@
+@import 'src/assets/global-styles/abstracts/colors'
+@import 'src/assets/global-styles/abstracts/vars'
+
+.dialog_wrapper
+    // max-height: 75vh
+    .dialog_header
+        padding: 15px
+        color: #fff
+        display: flex
+        justify-content: space-between
+    .dialog_header_content
+        .subtitle
+            color: #fff
+            p
+                margin-bottom: 0
+                // font-size: 12px
+        .title
+            display: flex
+            p
+                margin-bottom: 0
+
+    .form_wrapper
+        .form_container
+            .highlihted_field
+                ::ng-deep
+                    .wrapping_square
+                        border: 2px solid var(--section-color)
+
+.padding
+    padding: 15px
+    max-height: 50vh
+    overflow-y: auto
+    overflow-x: hidden
+.arabic_dir
+    text-align: right
+.english_dir
+    text-align: left
+.center
+    text-align: center
+.btn_wrapper
+    display: flex
+    justify-content: space-between
+    margin-top: 15px
+    .btn
+        width: 48%
+        border-radius: 30px
+        padding: 15px
+        cursor: pointer
+        color: white
+.cancel
+    background: dimgrey
+
+.bkgrd_color
+    background: var(--section-color)
+    
+.submit_btn_disabled
+    background-color: #c1c1c7cc
+.pointer
+    cursor: pointer

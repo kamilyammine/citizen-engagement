@@ -1,0 +1,39 @@
+.input_styling
+    mat-form-field
+        width: calc(100% - 5px)
+        .mat-form-field-wrapper
+            height: 60px
+            .mat-form-field-underline
+                display: none
+            .mat-form-field-infix
+                input
+                    width: 95%
+                    padding: 0 15px
+                .mat-form-field-label-wrapper
+                    .mat-form-field-label
+                        overflow: unset
+                        mat-label
+                            //white-space: pre-wrap
+                            font-size: 14px
+                            margin: 0 20px
+    
+.wrapping_square
+    margin-top: 15px
+    border: 1px solid #7D7D7D
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 25%)
+    border-radius: 30px
+    background-color: rgba(213,213,217,0.5)
+    .dropdown_input_field
+        width: calc(100% - 5px)
+        .mat-select-trigger
+            .mat-select-arrow-wrapper
+                .mat-select-arrow
+                    margin: 0 10px
+        .mat-select-value
+            padding: 0 15px
+        .mat-form-field-wrapper
+            .mat-form-field-underline
+                display: none
+
+.invalid
+    border-color: black

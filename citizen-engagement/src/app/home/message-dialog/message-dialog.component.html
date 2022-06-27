@@ -1,0 +1,29 @@
+<!-- <button mat-button mat-dialog-close>{{'close' | translate}}</button> -->
+
+<div *ngIf="!errorCode">
+    <div [ngClass]="lang == 'ar' ? 'arabic' : 'english'" class="padding">
+        <p class="bold">{{'thank_you' | translate}}</p>
+        <p>{{'thank_you_2' | translate}}</p>
+        <ul>
+            <li>{{ 'thank_you_3' | translate }}</li>
+            <li>{{ 'thank_you_4' | translate }}</li>
+            <li>{{ 'thank_you_5' | translate }}</li>
+        </ul>
+    </div>
+    <div [ngClass]="{'float_right': lang !== 'ar'}" class="padding">
+        <button mat-button mat-dialog-close class="btn">{{'close' | translate}}</button>
+    </div>
+</div>
+
+
+
+<div  *ngIf="errorCode">
+    <div  class="padding center">
+        <mat-icon class="warning_icon">warning</mat-icon>
+        <br>
+        <p class="bold">{{ errorCode | translate}}</p>
+    </div>
+    <div class="padding center">
+        <button mat-button mat-dialog-close class="btn">{{'close' | translate}}</button>
+    </div>
+</div>

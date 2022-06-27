@@ -1,0 +1,16 @@
+<div class="image_option" (click)="imageUpload.click()" [ngClass]="{'arabic_dir': lang === 'ar', 'english_dir': lang === 'en'}">
+    <img src="assets/images/camera_logo.svg" alt="" class="camera_logo">
+    <p *ngIf="imagesUrls.length == 0">{{'feedback_details.options.additional_options.image'
+        | translate}} <span *ngIf="imageRequired">*</span>
+    </p>
+    <div class="images_preview" *ngIf="imagesUrls">
+        <div *ngFor="let img of imagesUrls">
+            <img [src]="img" alt="" *ngIf="img !== 'video'" #uploadedImg>
+            <div class="video_icon" *ngIf="img === 'video'">
+                <mat-icon>videocam</mat-icon>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="file" (change)="onFileSelected($event)" style="display: none;" #imageUpload
+    accept="image/*" multiple>

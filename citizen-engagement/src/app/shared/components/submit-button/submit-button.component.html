@@ -1,0 +1,28 @@
+<div *ngIf="secondForm == undefined && typeOfFeedback">
+    <button
+    type="submit"
+    class="submit_btn"
+    *ngIf="form.enabled"
+    [disabled]="(form.invalid || form.pristine) || !condition" 
+    [ngClass]="{
+        'submit_btn_disabled': (form.invalid || form.pristine || !condition), 
+        'society' : typeOfFeedback == 'society',
+        'traffic' : typeOfFeedback == 'traffic',
+        'health' : typeOfFeedback == 'health',
+        'environment' : typeOfFeedback == 'environment',
+        'other' : typeOfFeedback == 'other'
+    }"
+    >{{ (placeholdertext? placeholdertext : 'feedback_details.save') | translate }}
+</button>
+<!-- 'environment' : typeOfFeedback == 'environment'} -->
+</div>
+<div *ngIf="secondForm != undefined">
+    <button
+    type="submit"
+    class="submit_btn"
+    *ngIf="form.enabled && secondForm.enabled"
+    [disabled]="(secondForm.invalid || secondForm.pristine && (form.invalid || form.pristine)) || condition" 
+    [ngClass]="{'submit_btn_disabled': (secondForm.invalid || secondForm.pristine && (form.invalid || form.pristine))}"
+    >{{ (placeholdertext? placeholdertext : 'feedback_details.save') | translate }}
+</button>
+</div>

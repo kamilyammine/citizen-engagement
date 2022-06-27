@@ -1,0 +1,46 @@
+@import 'src/assets/global-styles/abstracts/colors'
+@import 'src/assets/global-styles/abstracts/vars'
+
+.image_option
+    border: 1px solid #D94452
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 25%)
+    border-radius: 30px
+    padding: 10px
+    cursor: pointer
+    display: flex
+    direction: rtl
+    margin-top: 15px
+    .camera_logo
+        background: #D94452
+        padding: 5px 12px
+        border-radius: 50%
+    p
+        color: #D94452
+        font-size: 20px
+        font-weight: bold
+        margin-bottom: 0
+        padding: 5px
+        overflow: hidden
+        text-overflow: ellipsis
+    .images_preview
+        margin: 0 10px
+        display: flex
+        img
+            width: 40px
+            height: 40px
+            margin: 0 5px
+
+        .video_icon
+            width: 40px
+            height: 40px
+            border: 3px solid #D94452
+            border-radius: 5px
+            text-align: center
+            margin: 0 5px
+            mat-icon
+                margin-top: 4px
+                color: #D94452
+    &.arabic_dir
+        direction: rtl
+    &.english_dir
+        direction: ltr

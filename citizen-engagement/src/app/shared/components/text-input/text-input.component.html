@@ -1,0 +1,27 @@
+<div class="input_styling">
+    <div
+      class="wrapping_square"
+      [ngClass]="{
+        invalid: fieldInvalid()
+      }"
+    >
+      <mat-form-field color="primary" class="sheet-elements">
+        <mat-label
+          >{{
+            placeholdertext | translate
+          }}{{fieldRequired() ? "*" : ""}}
+        </mat-label>
+        <input
+          
+          [type]="isPassword? 'password' : 'text'"
+          matInput
+          maxlength=60
+          [formControl]="ngControl.control"
+        />
+      </mat-form-field>
+    </div>
+    <app-error-display
+      [control]="ngControl.control"
+    >
+    </app-error-display>
+  </div>

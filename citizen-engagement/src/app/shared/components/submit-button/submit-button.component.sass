@@ -1,0 +1,29 @@
+@import 'src/assets/global-styles/abstracts/colors'
+@import 'src/assets/global-styles/abstracts/vars'
+
+.submit_btn
+    border-radius: 10px
+    color: white
+    font-weight: 500
+    border: unset
+    max-width: 650px
+    width: calc( 100% - 30px )
+    height: 50px
+    margin: 20px 0px
+.environment
+    background: $feedback_green
+.society
+    background: $feedback_orange
+.traffic
+    background: $feedback_blue
+.health
+    background: $feedback_purple
+.other
+    background: $feedback_other
+.submit_btn_disabled
+    background-color: #c1c1c7cc
+
+@media screen and ( min-width: 768px )
+    .submit_btn
+        width: calc( 100% - 40px )
+        margin-bottom: 50px

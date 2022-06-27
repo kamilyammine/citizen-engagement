@@ -1,0 +1,56 @@
+<ng-container *ngIf="isTouched() || isSubmitted()">
+    <div *ngIf="hasError('required'); else whitespaceError" class="error">
+        {{ 'form_errors.field_required' | translate }}
+    </div>
+    <ng-template #whitespaceError>
+        <div *ngIf="hasError('whitespace'); else serviceWorkerPhoneFormatFormatError" class="error">
+            {{ 'form_errors.incorrect_format' | translate }}
+        </div>
+    </ng-template>
+    <ng-template #serviceWorkerPhoneFormatFormatError>
+        <div *ngIf="hasError('pattern') && isServiceWorkerPhoneFormatError(); else phoneFormatError" class="error">
+            {{ 'form_errors.service_worker_phone_number_formatting' | translate }}
+        </div>
+    </ng-template>
+    <ng-template #phoneFormatError>
+        <div *ngIf="hasError('pattern') && isPhoneFormatError(); else hotlineFormatError" class="error">
+            {{ 'form_errors.phone_number_formatting' | translate }}
+        </div>
+    </ng-template>
+    <ng-template #hotlineFormatError>
+        <div *ngIf="hasError('pattern') && isHotlineFormatError(); else numberFormatError" class="error">
+            {{ 'form_errors.hotline_formatting' | translate }}
+        </div>
+    </ng-template>
+    <ng-template #numberFormatError>
+        <div *ngIf="hasError('pattern') && isNumberFormatError(); else formatError" class="error">
+            {{ 'form_errors.number_formatting' | translate }}
+        </div>
+    </ng-template>
+    <ng-template #formatError>
+        <div *ngIf="hasError('pattern') && !isServiceWorkerPhoneFormatError() && !isNumberFormatError() && !isPhoneFormatError() &&!isHotlineFormatError() ; else minMaxLengthError" class="error">
+            {{ 'form_errors.incorrect_format' | translate }}
+        </div>
+    </ng-template>
+    <ng-template #minMaxLengthError>
+        <div *ngIf="hasError('length') && this.control.errors.maxLength && this.control.errors.minLength; else minLengthError" class="error">
+
+            {{'form_errors.min_max_length_formatting1' | translate}} {{toArabic(this.control.errors.minLength)}} {{'form_errors.min_max_length_formatting2' | translate}} {{toArabic(this.control.errors.maxLength)}}
+        </div>
+    </ng-template>
+    <ng-template #minLengthError>
+        <div *ngIf="hasError('length') && !this.control.errors.maxLength && this.control.errors.minLength; else maxLengthError" class="error">
+            {{'form_errors.min_length_formatting1' | translate}} {{toArabic(this.control.errors.minLength)}} {{'form_errors.min_length_formatting2' | translate}} 
+        </div>
+    </ng-template>
+    <ng-template #maxLengthError>
+        <div *ngIf="hasError('length') && this.control.errors.maxLength && !this.control.errors.minLength; else genericError" class="error">
+            {{'form_errors.max_length_formatting1' | translate}} {{toArabic(this.control.errors.maxLength)}} {{'form_errors.max_length_formatting2' | translate}} 
+        </div>
+    </ng-template>
+    <ng-template #genericError>
+        <div class="error">
+            {{getErrorMessage() | translate}}
+        </div>
+    </ng-template>
+</ng-container>

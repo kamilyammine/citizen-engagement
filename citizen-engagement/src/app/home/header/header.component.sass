@@ -1,0 +1,204 @@
+@import 'src/assets/global-styles/abstracts/colors'
+@import 'src/assets/global-styles/abstracts/vars'
+
+.environment
+    background: $feedback_green !important
+.society
+    background: $feedback_orange !important
+.traffic
+    background: $feedback_blue !important
+.health
+    background: $feedback_purple !important
+.other
+    background: $feedback_other !important
+
+.remove_padding
+    padding-right: 0 !important
+
+.slogan_outer_wrapper
+    background: transparent
+    // position: relative
+    // bottom: 5px
+    .slogan_wrapper
+        display: flex
+        justify-content: space-between
+        padding: 0 13%
+        background: $impact_blue
+        border-bottom-left-radius: 17px
+        border-bottom-right-radius: 17px
+        p
+            color: #fff
+            margin-bottom: 0
+            padding: 3px
+.navigate_btn_outer
+    background: #fff
+    // position: relative
+    // bottom: 5px
+    cursor: pointer
+    .navigate_btn_wrapper
+        display: flex
+        justify-content: center
+        // padding: 0 1%
+        padding: 3px
+        background: rgb(12, 68, 142)
+        border-bottom-left-radius: 17px
+        border-bottom-right-radius: 17px
+        .navigate_btn_container
+            display: flex
+            color: white
+            p
+                margin-bottom: 0
+                padding: 3px
+                font-size: 0.85rem
+            .icon_back
+                margin: auto
+// .header
+//     padding: 0 10px
+//     background: #FFF
+//     align-items: center
+.header
+    background: $impact_blue
+    align-items: center
+    .logos_wrapper
+        display: flex
+        background: #fff
+        align-items: center
+        justify-content: space-between
+        padding: 10px 5px
+        border-bottom-left-radius: 17px
+        border-bottom-right-radius: 17px
+    .logo
+        width: 90px
+        height: 80%
+        img
+            width: 80%
+            height: auto
+    .pointer
+        cursor: pointer
+
+    .select_language_wrapper
+        display: flex
+        justify-content: space-between
+        padding-right: 10px
+        .select_language
+            font-size: 11px
+            display: flex
+            align-items: center
+            margin-right: auto
+            border-bottom: 0.5px solid rgba(29, 62, 104,0.4)
+            color: rgba(29, 62, 104,1)
+            mat-icon
+                color: rgba(29, 62, 104,0.4)
+    .center
+        display: flex
+        justify-content: center
+
+.worldbank_wrapper
+    display: flex
+    justify-content: center
+    align-items: center
+
+.environment
+    background: $feedback_green !important
+.society
+    background: $feedback_orange !important
+.traffic
+    background: $feedback_blue !important
+.health
+    background: $feedback_purple !important
+.other
+    background: $feedback_other !important
+
+@media screen and ( min-width: 550px )
+    .header
+        .logo
+            width: 145px
+        .title_container
+            .title
+                margin-right: auto
+            .sub_title
+                margin-right: auto
+        .center
+            display: block
+    
+@media screen and ( min-width: 768px )
+    .header
+        background: #fff
+        padding: 0
+        padding-left: 10px
+        display: flex
+        justify-content: flex-end
+        .logo
+            width: 125px
+            margin: 0 10px
+        .title_container
+            line-height: 24px
+            .title
+                font-size: 24px
+            .sub_title
+                font-size: 15px
+        .select_language_wrapper
+            .select_language
+                font-size: 1rem
+
+        .navigate_btn_outer
+            position: unset
+            padding: 5px 0
+            width: 100%
+            .navigate_btn_wrapper
+                box-shadow: 0 1px 4px 0 rgb(0 0 0 / 60%)
+                border-top-left-radius: 30px
+                border-bottom-left-radius: 30px
+                border-top-right-radius: 0px
+                border-bottom-right-radius: 0px
+                justify-content: unset
+            .icon_back
+                top: 3px
+        .world_bank_logo
+            min-width: 120px
+    .cedar_logo
+        min-width: 80px
+    .slogan_outer_wrapper
+        width: 100%
+        position: unset
+        padding: 5px 0
+        .slogan_wrapper
+            box-shadow: 0 1px 4px 0 rgb(0 0 0 / 60%)
+            border-top-left-radius: 30px
+            border-bottom-left-radius: 30px
+            border-top-right-radius: 0px
+            border-bottom-right-radius: 0px
+        
+
+@media screen and ( min-width: 1024px )
+    .header
+        .logo
+            width: 150px
+        .navigate_btn_container
+            p
+                font-size: 18px
+    .slogan_outer_wrapper
+        .slogan_wrapper
+            padding: 0 20%
+            display: flex
+            margin: auto
+            .not_selectable
+                -webkit-user-select: none      
+                -moz-user-select: none
+                -ms-user-select: none
+                user-select: none
+            p
+                font-size: 20px
+    .navigate_btn_outer
+        .navigate_btn_wrapper
+            .navigate_btn_container
+                p
+                    font-size: 24px
+                .icon_back
+                    line-height: 30px
+@media screen and ( min-width: 1500px )
+    .slogan_outer_wrapper
+        .slogan_wrapper
+            padding: 0 25%
+            p
+                font-size: 25px

@@ -1,0 +1,73 @@
+<div *ngIf="!navigateButton">
+    <div class="header" dir="rtl">
+        <div class="slogan_outer_wrapper" *ngIf="!isMobile()">
+            <div class="slogan_wrapper">
+                <p class="padding_right not_selectable" unselectable="on">{{'on_your_way' | translate}}</p>
+                <p class="padding_left not_selectable" unselectable="on">On Your Way</p>
+            </div>
+        </div>
+        <div class="logos_wrapper">
+            <img src="assets/images/CDR_2.png" alt="" class="center logo" />
+            <img src="assets/images/LOGO_MPW_2.png" alt="" class="center logo" />
+            <img src="assets/images/LOGO_WB.png" alt="" class="center logo" />
+            <div class="select_language_wrapper pointer">
+                <div [matMenuTriggerFor]="menu" class="select_language">{{selectedLanguage?.value}} <mat-icon>
+                        keyboard_arrow_down</mat-icon>
+                </div>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="select('ar')">عربية</button>
+                    <button mat-menu-item (click)="select('en')">English</button>
+                </mat-menu>
+            </div>
+        </div>
+    </div>
+    <div class="slogan_outer_wrapper" *ngIf="isMobile()">
+        <div class="slogan_wrapper">
+            <p>On Your Way</p>
+            <p>{{'on_your_way' | translate}}</p>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="navigateButton" dir="rtl">
+    <div class="header remove_padding" dir="rtl">
+        <div class="navigate_btn_outer" *ngIf="!isMobile()">
+            <div class="navigate_btn_wrapper" (click)="navigateToHome()" [ngClass]="type">
+                <div class="navigate_btn_container">
+                    <mat-icon class="icon_back">keyboard_arrow_right</mat-icon>
+                    <p class="title">{{'project_title' | translate}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="logos_wrapper">
+            <img src="assets/images/CDR_2.png" alt="" class="center logo" />
+            <img src="assets/images/LOGO_MPW_2.png" alt="" class="center logo" />
+            <img src="assets/images/LOGO_WB.png" alt="" class="center logo" />
+
+
+            <div class="select_language_wrapper pointer">
+                <div [matMenuTriggerFor]="menu" class="select_language">{{selectedLanguage?.value}} <mat-icon>
+                        keyboard_arrow_down</mat-icon>
+                </div>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="select('ar')">عربية</button>
+                    <button mat-menu-item (click)="select('en')">English</button>
+                </mat-menu>
+            </div>
+        </div>
+    </div>
+    <div class="navigate_btn_outer" *ngIf="isMobile()" [ngClass]="{
+        'society' : type == 'society',
+        'traffic' : type == 'traffic',
+        'health' : type == 'health',
+        'environment' : type == 'environment',
+        'other' : type == 'other'
+    }">
+        <div class="navigate_btn_wrapper align_center" (click)="navigateToHome()">
+            <div class="navigate_btn_container">
+                <mat-icon class="icon_back">keyboard_arrow_right</mat-icon>
+                <p class="title">{{'project_title' | translate}}</p>
+            </div>
+        </div>
+    </div>
+</div>

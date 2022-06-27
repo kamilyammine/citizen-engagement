@@ -1,0 +1,22 @@
+<div class="input_styling">
+  <div class="wrapping_square" [ngClass]="{
+        invalid: fieldInvalid()
+      }">
+    <mat-form-field color="primary" class="sheet-elements">
+      <mat-label>{{ placeholdertext | translate }} {{ fieldRequired() ? "*" : "" }}
+        <span *ngIf="input.value.length>0">{{input.value?.length || 0}}/2000</span>
+      </mat-label>
+      <!-- <input
+          [autocomplete]="isPassword? 'on' : 'off'"
+          [type]="isPassword? 'password' : 'text'"
+          matInput
+          [formControl]="ngControl.control"
+        /> -->
+      <textarea #input cdkTextareaAutosize #autosize="cdkTextareaAutosize" [formControl]="ngControl.control" matInput
+        maxlength=2000 class="textarea" [placeholder]="'max_2000_chars' | translate"></textarea>
+    </mat-form-field>
+  </div>
+
+  <app-error-display [control]="ngControl.control">
+  </app-error-display>
+</div>

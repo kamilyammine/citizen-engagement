@@ -1,0 +1,160 @@
+@import 'src/assets/global-styles/abstracts/colors'
+@import 'src/assets/global-styles/abstracts/vars'
+.impact_logo
+    text-align: center
+    padding: 20px
+    position: fixed
+    bottom: 0px
+    right: 0px
+    left: 0px
+    background: #fff
+    z-index: 20
+.body_background 
+    background: url('^assets/images/background_img.png')
+    background-size: cover
+    background-repeat: no-repeat
+    // height: 100vh
+    box-shadow: inset 0 0 0 2000px rgba(30, 63, 104, 0.6)
+    .home_wrapper
+        padding: 20px 20px 100px 20px
+        text-align: center
+        .contact_us
+            margin-bottom: 0
+            color: #fff
+            font-size: 1rem
+            cursor: pointer
+        .links
+            color: #fff
+            a
+                color: #fff
+                text-decoration: underline
+                cursor: pointer
+        .project_wrapper
+            display: flex
+            justify-content: center
+            align-items: center
+            ::ng-deep
+                .mat-select-value
+                    color: #fff
+                .mat-select-arrow
+                    color: #fff
+                .mat-form-field-underline
+                    background: rgba(255,255,255,0.48)
+                .mat-form-field.mat-focused .mat-form-field-ripple
+                    background: transparent
+            .pin
+                padding: 10px 13px
+                box-shadow: inset 0 0 0 2000px rgba(255,255,255,0.16)
+                border-radius: 50%
+            .project_ar
+                text-align: right
+                width: 70%
+                margin-right: 5px
+            .project_en
+                text-align: left
+                width: 70%
+                margin-left: 5px
+                
+        .project_title
+            color: #fff
+            font-size: 30px
+        .project_description
+            color: lightgray
+        .home_title
+            color: #fff
+            margin-bottom: 0
+            font-size: 20px
+        .feedback_anonymous
+            color: lightgray
+            font-size: 14px
+        .other_feedback
+            text-align: center
+            max-width: 650px
+            margin: auto
+            .other_feedback_card
+                width: 94%
+                background: $feedback_other
+                border-radius: 5px
+                color: white
+                cursor: pointer
+                margin: auto
+                p
+                    font-size: 15px
+                    padding: 10px
+        .feedback_wrapper
+            min-height: 100%
+            display: flex
+            max-width: 650px
+            margin: auto
+            justify-content: center
+            flex-wrap: wrap
+            flex-direction: row
+            .feedback_card
+                margin: 5px
+                flex-basis: 46%
+                justify-content: center
+                flex-direction: column
+                border-radius: 5px
+                padding: 20px 5px
+                cursor: pointer 
+                .feedback_card_inner
+                    justify-content: center
+                    flex-direction: row
+                    .icon_wrapper
+                        box-shadow: inset 0 0 0 2000px rgba(0,0,0, 0.1)
+                        border-radius: 50%
+                        padding: 10px
+                        display: flex
+                        margin: auto
+                        justify-content: center
+                        width: 50px
+                        height: 50px
+                    img
+                        // box-shadow: inset 0 0 0 2000px rgba(0,0,0, 0.2)
+                        // border-radius: 50%
+                    .inner_text
+                        margin-top: 10px
+                        padding: 0 10px
+                        color: #fff
+                        font-size: 15px
+            .environment
+                background: #89C053
+            .society
+                background: #F49224
+            .health
+                background: #9242D6
+            .traffic
+                background: #457ACE
+
+
+@media screen and ( min-width: 768px )
+    .body_background
+        height: 100vh
+        overflow-y: auto
+        .home_wrapper
+            padding: 3% 15% 60px 15%
+            .project_title
+                font-size: 45px
+            .home_title
+                font-size: 30px
+            .feedback_anonymous
+                font-size: 20px
+            .other_feedback
+                .other_feedback_card
+                    p
+                        font-size: 20px
+            .feedback_wrapper
+                .feedback_card
+                    .feedback_card_inner
+                        .inner_text
+                            font-size: 20px
+
+// @media screen and ( min-width: 1024px )
+//     .body_background
+//         .home_wrapper
+//             .project_title
+//                 font-size: 35px
+//             .home_title
+//                 font-size: 40px
+    
+ 
