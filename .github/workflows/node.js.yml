@@ -32,3 +32,4 @@ jobs:
        npm install
        npm install @angular/cli
        ng build --prod --output-path=dist
+       cp /actions-runner2/_work/citizen-engagement/citizen-engagement/citizen-engagement/dist /angular-nginx-docker
